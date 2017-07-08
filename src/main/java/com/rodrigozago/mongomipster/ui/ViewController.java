@@ -1078,7 +1078,7 @@ public class ViewController extends javax.swing.JFrame {
                 this.jTextFieldServicoViewClienteCPF.setText(comanda.getCliente().getCpf());
                 ArrayList<Produto> produtosDaComanda = comanda.getProdutos();
                 if(produtosDaComanda.isEmpty())
-                    this.jTextFieldServicoViewTotalComanda.setText("R$ 00,00");
+                    this.jTextFieldServicoViewTotalComanda.setText("R$ 00.00");
                 else
                 {
                     this.modelServicoProdutosDaComanda.setRowCount(0);
@@ -1130,7 +1130,6 @@ public class ViewController extends javax.swing.JFrame {
                 this.modelServicoProdutosDaComanda.addRow(row);
                 total += Double.parseDouble(pro.getPreco());
             }
-            total += Double.parseDouble(pro.getPreco());
             this.jTextFieldServicoViewTotalComanda.setText("R$ " + String.valueOf(total));
             JOptionPane.showMessageDialog(null, "Produto inserido com sucesso!", "Produto inserido", JOptionPane.INFORMATION_MESSAGE);
             
