@@ -1128,7 +1128,7 @@ public class ViewController extends javax.swing.JFrame {
                 Produto aux = i.next();
                 Object[] row = {aux.getNome(), "R$: " + aux.getPreco()};
                 this.modelServicoProdutosDaComanda.addRow(row);
-                total += Double.parseDouble(pro.getPreco());
+                total += Double.parseDouble(aux.getPreco());
             }
             this.jTextFieldServicoViewTotalComanda.setText("R$ " + String.valueOf(total));
             JOptionPane.showMessageDialog(null, "Produto inserido com sucesso!", "Produto inserido", JOptionPane.INFORMATION_MESSAGE);
