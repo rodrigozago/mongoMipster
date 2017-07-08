@@ -1051,6 +1051,7 @@ public class ViewController extends javax.swing.JFrame {
         try{
             this.database.updateOneDocument(this.caixa.getCollectionName(), "_id", this.caixa.getId(), this.caixa.abrirCaixa());
             this.jTextFieldCaixaEstado.setText(this.caixa.caixaAberto()? "ABERTO" : "FECHADO");
+            this.jTextFieldCaixaIdComanda.setEnabled(true);
         }catch(CaixaAbertoException e){
             JOptionPane.showMessageDialog(null, e.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
         }
@@ -1060,6 +1061,7 @@ public class ViewController extends javax.swing.JFrame {
         try{
             this.database.updateOneDocument(this.caixa.getCollectionName(), "_id", this.caixa.getId(), this.caixa.fecharCaixa());
             this.jTextFieldCaixaEstado.setText(this.caixa.caixaAberto()? "ABERTO" : "FECHADO");
+            this.jTextFieldCaixaIdComanda.setEnabled(false);
         }catch(CaixaFechadoException e){
             JOptionPane.showMessageDialog(null, e.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
         }
