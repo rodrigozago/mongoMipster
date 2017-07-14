@@ -36,9 +36,10 @@ public class Model {
     MongoClient mongoClient;
     MongoDatabase database;
     
-    public Model() throws MongoException
+    public Model(MongoClientURI uri) throws MongoException
     {
-        this.connectionString = new MongoClientURI("mongodb://admin:admin@ds145312.mlab.com:45312/mipster");
+        // this.connectionString = new MongoClientURI("mongodb://admin:admin@ds145312.mlab.com:45312/mipster");
+        this.connectionString = uri;
         mongoClient = new MongoClient(connectionString); 
         database = mongoClient.getDatabase("mipster");
     }

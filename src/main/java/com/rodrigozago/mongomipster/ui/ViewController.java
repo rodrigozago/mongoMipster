@@ -5,6 +5,7 @@
  */
 package com.rodrigozago.mongomipster.ui;
 
+import com.mongodb.MongoClientURI;
 import com.rodrigozago.mongomipster.core.Caixa;
 import com.rodrigozago.mongomipster.core.Cliente;
 import com.rodrigozago.mongomipster.core.Comanda;
@@ -42,7 +43,7 @@ public class ViewController extends javax.swing.JFrame {
     
     private void initMipster()
     {
-        this.database = new Model();
+        this.database = new Model(new MongoClientURI("mongodb://admin:admin@ds145312.mlab.com:45312/mipster"));
         this.caixa = new Caixa(database.getFirstDocument("caixa"));
         
         this.jTextFieldCaixaEstado.setText(this.caixa.caixaAberto()? "ABERTO" : "FECHADO");
